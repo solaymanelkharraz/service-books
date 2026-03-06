@@ -7,8 +7,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // 1. Connect to MongoDB Atlas (Use your working URI!)
-const uri = "mongodb+srv://soulaymanelkharraz2006_db_user:wzVeEfPzccpsRxUu@cluster1.ykghf7g.mongodb.net/library";
-
+const uri = process.env.MONGO_URI;
 // Notice: No deprecated options here either!
 mongoose.connect(uri)
     .then(() => console.log("Connected to MongoDB !!!"))
